@@ -6,6 +6,7 @@
   <arg name="color_height" />
   <arg name="depth_width" />
   <arg name="depth_height" />
+  <arg name="serial_no" />
 
   <group ns="$(arg camera_ns)">
     <param name="rgb_camera/global_time_enabled" value="true"/>
@@ -14,6 +15,7 @@
 
   <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
     <arg name="camera" value="$(arg camera_ns)" />
+    <!-- <arg name="serial_no" value="$(arg serial_no)" /> -->
     <arg name="manager" value="$(arg manager)" />
     <arg name="publish_tf" value="$(arg publish_tf)" />
     <arg name="color_width"  value="$(arg color_width)" />

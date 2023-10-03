@@ -4,6 +4,7 @@
   <arg name="launch_grasp_mask_rcnn" default="false" />
   <arg name="camera_ns" default="realsense_torso" />
   <arg name="camera_type" default="l515" />
+  <arg name="serial_no" default="f0232933" />
 
   <arg name="camera_frame_id" default="$(arg camera_ns)_color_optical_frame" />
   <arg name="manager" default="$(arg camera_ns)_camera_manager" />
@@ -36,6 +37,7 @@
 
   <include file="$(find eus_vive)/launch/include/realsense_$(arg camera_type).launch">
     <arg name="camera_ns" value="$(arg camera_ns)" />
+    <arg name="serial_no" value="$(arg serial_no)" />
     <arg name="manager" value="$(arg manager)" />
     <arg name="publish_tf" value="false" />
   </include>

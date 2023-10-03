@@ -13,21 +13,6 @@
     <xacro:arg name="gazebo" value="${gazebo}"/>
   </xacro:include>
 
-  <!-- Baxter Extra Cameras -->
-
-  <xacro:arg name="use_nominal_extrinsics" default="false"/>
-  <xacro:property name="width" value=".2" />
-
-  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
-  <xacro:sensor_d435 parent="base" name="camera2" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
-    <origin rpy="0 0 0" xyz="0.23 0 0.37"/>
-  </xacro:sensor_d435>
-
-  <xacro:include filename="$(find realsense2_description)/urdf/_l515.urdf.xacro" />
-  <xacro:sensor_l515 parent="base" name="camera1" use_nominal_extrinsics="$(arg use_nominal_extrinsics)">
-    <origin rpy="0 ${pi/3.4} 0" xyz="0.23 0 0.60"/>
-  </xacro:sensor_l515>
-  
   <!-- Baxter Pedestal -->
   <xacro:if value="$(arg pedestal)">
     <xacro:include filename="$(find baxter_description)/urdf/pedestal/pedestal.xacro">

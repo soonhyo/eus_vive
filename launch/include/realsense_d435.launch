@@ -6,6 +6,7 @@
   <arg name="color_height" default="480" />
   <arg name="depth_width" default="640" />
   <arg name="depth_height" default="480" />
+  <arg name="serial_no" />
 
   <include file="$(find eus_vive)/launch/include/realsense.launch">
     <arg name="camera_ns" value="$(arg camera_ns)" />
@@ -15,5 +16,6 @@
     <arg name="color_height" value="$(arg color_height)" />
     <arg name="depth_width"  value="$(arg depth_width)" />
     <arg name="depth_height" value="$(arg depth_height)" />
+    <arg name="serial_no" value="$(arg serial_no)" />
   </include>
 </launch>

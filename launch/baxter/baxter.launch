@@ -39,8 +39,10 @@
        if="$(eval arg('rgripper_type') in ['softhand', 'softhand-v2'])" />
 
   <!-- camera -->
+  <arg name="manager" default="camera_1" />
   <arg name="camera_ns" default="realsense_torso" />
   <arg name="camera_type" default="l515" />
+  <arg name="serial_no" default="f0232933" />
   <arg name="spherical_camera_ns" default="kodak_head" />
   <arg name="spherical_left_camera_ns" default="elp_head_left" />
   <arg name="spherical_right_camera_ns" default="elp_head_right" />
@@ -104,8 +106,10 @@
     -->
     <!-- realsense torso -->
     <include file="$(find eus_vive)/launch/baxter/baxter_realsense_torso.launch">
+      <arg name="manager" value="$(arg manager)" />
       <arg name="camera_ns" value="$(arg camera_ns)" />
       <arg name="camera_type" value="$(arg camera_type)" />
+      <arg name="serial_no" value="$(arg serial_no)" />
       <arg name="launch_transformable_server" value="true" />
       <arg name="launch_tabletop_detector" value="$(arg launch_tabletop_detector)" />
       <arg name="launch_grasp_mask_rcnn" value="$(arg launch_grasp_mask_rcnn)" />
